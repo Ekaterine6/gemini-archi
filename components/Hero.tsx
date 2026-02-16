@@ -57,24 +57,22 @@ const Hero: React.FC = () => {
   return (
     <section ref={heroRef} className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       {/* Background Video Container */}
-      <div ref={bgRef} className="absolute inset-0 z-0">
-          {/* Dark overlay */}
-          <div ref={bgRef} className="absolute inset-0 overflow-hidden"></div>
-
-          <video
+      <div ref={bgRef} className="absolute inset-0 overflow-hidden">
+        <video
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
-          className="absolute inset-0 w-full h-full object-cover grayscale brightness-75 z-0"
-          >
+          className="absolute inset-0 w-full h-full object-cover grayscale brightness-75"
+        >
+          <source src="/pictures/vid.mp4" type="video/mp4" />
+        </video>
 
-            <source src="/pictures/vid.mp4" type="video/mp4" />
-            
-          </video>
-          <div className="absolute inset-0 bg-black/60 z-10"></div>
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
       </div>
+
 
 
       {/* Content */}

@@ -64,14 +64,14 @@ const Hero: React.FC = () => {
           loop
           playsInline
           preload="auto"
-          className="absolute inset-0 w-full h-full object-cover grayscale brightness-75"
+          className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/pictures/vid.mp4" type="video/mp4" />
           
         </video>
 
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-transparent pointer-events-none"></div>
       </div>
 
 

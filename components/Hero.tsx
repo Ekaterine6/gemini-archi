@@ -66,8 +66,9 @@ const Hero: React.FC = () => {
           preload="auto"
           className="absolute inset-0 w-full h-full object-cover grayscale brightness-75"
         >
-          <source href="public/pictures.vid.mp4" type="video/mp4" />
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-modern-architecture-building-at-night-1249-large.mp4" type="video/mp4" />
+          <source src="/pictures/vid.mp4" type="video/mp4" />
+
+          
         </video>
 
         {/* Dark overlay */}

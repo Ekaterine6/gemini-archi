@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
           preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/pictures/bg1.mp4" type="video/mp4" />
+          <source src="/pictures/bg1.webm" type="video/mp4" />
           
         </video>
 

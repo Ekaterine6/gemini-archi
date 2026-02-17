@@ -1,11 +1,18 @@
 
 export interface Project {
   id: number;
-  title: string;
-  category: string;
+  title: {
+    ru: string;
+    en: string;
+  };
+  category: {
+    ru: string;
+    en: string;
+  };
   image: string;
   year: string;
 }
+
 
 export interface TeamMember {
   id: number;

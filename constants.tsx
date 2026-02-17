@@ -4,12 +4,43 @@ import { Building2, Layout, Ruler, PenTool } from 'lucide-react';
 import { Project, TeamMember, Service, Review } from './types';
 
 export const PROJECTS: Project[] = [
-  { id: 1, title: "Onyx Residence", category: "Luxury Residential", image: "/pictures/ibish2.png", year: "2023" },
-  { id: 2, title: "Monolith Towers", category: "Commercial Hub", image: "/pictures/wood.jpeg", year: "2022" },
-  { id: 3, title: "The Atrium", category: "Cultural Space", image: "/pictures/iron.jpeg", year: "2024" },
-  { id: 4, title: "Ethereal Villa", category: "Private Estate", image: "/pictures/wall.jpeg", year: "2023" },
-  { id: 5, title: "Urban Flux", category: "Mixed Use", image: "/pictures/mud.jpeg", year: "2024" },
+  {
+    id: 1,
+    title: { ru: "Резиденция Оникс", en: "Onyx Residence" },
+    category: { ru: "Элитное жильё", en: "Luxury Residential" },
+    image: "/pictures/ibish2.png",
+    year: "2023",
+  },
+  {
+    id: 2,
+    title: { ru: "Башни Монолит", en: "Monolith Towers" },
+    category: { ru: "Коммерческий центр", en: "Commercial Hub" },
+    image: "/pictures/better.jpg",
+    year: "2022",
+  },
+  {
+    id: 3,
+    title: { ru: "Атриум", en: "The Atrium" },
+    category: { ru: "Культурное пространство", en: "Cultural Space" },
+    image: "/pictures/iron.jpeg",
+    year: "2024",
+  },
+  {
+    id: 4,
+    title: { ru: "Эфирная Вилла", en: "Ethereal Villa" },
+    category: { ru: "Частная усадьба", en: "Private Estate" },
+    image: "/pictures/ibish1.jpeg",
+    year: "2023",
+  },
+  {
+    id: 5,
+    title: { ru: "Городской Поток", en: "Urban Flux" },
+    category: { ru: "Смешанное использование", en: "Mixed Use" },
+    image: "/pictures/mud.jpeg",
+    year: "2024",
+  },
 ];
+
 
 export const SERVICES: Service[] = [
   { id: 1, title: "Architectural Design", description: "Visionary concepts translated into structurally sound masterpieces.", icon: "Building2" },

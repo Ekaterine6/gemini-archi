@@ -1,5 +1,4 @@
-
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -19,25 +18,44 @@ gsap.registerPlugin(ScrollTrigger);
 const App: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // ✅ LANGUAGE STATE (default Russian)
+  const [language, setLanguage] = useState<"ru" | "en">("ru");
+
+  // ✅ Load saved language from localStorage
   useEffect(() => {
-    // Basic smooth scroll feel (simulated via CSS or GSAP if needed)
-    // Here we focus on ScrollTrigger initializations
+    const savedLang = localStorage.getItem("lang");
+    if (savedLang === "ru" || savedLang === "en") {
+      setLanguage(savedLang);
+    }
+  }, []);
+
+  // ✅ Save language when changed
+  useEffect(() => {
+    localStorage.setItem("lang", language);
+  }, [language]);
+
+  useEffect(() => {
     ScrollTrigger.refresh();
   }, []);
 
   return (
-    <div ref={containerRef} className="relative bg-[#050505] text-white selection:bg-white selection:text-black">
-      <Navbar />
+    <div
+      ref={containerRef}
+      className="relative bg-[#050505] text-white selection:bg-white selection:text-black"
+    >
+      <Navbar language={language} setLanguage={setLanguage} />
+
       <main>
-        <Hero />
-        <Services />
-        <HorizontalGallery />
+        <Hero language={language} />
+        <Services language={language} />
+        <HorizontalGallery language={language} />
         <Counters />
-        <Team />
-        <Testimonials />
-        <Contact />
+        <Team language={language} />
+        <Testimonials language={language} />
+        <Contact language={language} />
       </main>
-      <Footer />
+
+      <Footer language={language} />
     </div>
   );
 };

@@ -4,11 +4,11 @@ import { Building2, Layout, Ruler, PenTool } from 'lucide-react';
 import { Project, TeamMember, Service, Review } from './types';
 
 export const PROJECTS: Project[] = [
-  { id: 1, title: "Onyx Residence", category: "Luxury Residential", image: "/pictures/house.jpg", year: "2023" },
-  { id: 2, title: "Monolith Towers", category: "Commercial Hub", image: "/pictures/bedroom.jpg", year: "2022" },
-  { id: 3, title: "The Atrium", category: "Cultural Space", image: "/pictures/livingroom.jpg", year: "2024" },
-  { id: 4, title: "Ethereal Villa", category: "Private Estate", image: "/pictures/tv.jpg", year: "2023" },
-  { id: 5, title: "Urban Flux", category: "Mixed Use", image: "/pictures/window.jpg", year: "2024" },
+  { id: 1, title: "Onyx Residence", category: "Luxury Residential", image: "/pictures/ibish2.jpeg", year: "2023" },
+  { id: 2, title: "Monolith Towers", category: "Commercial Hub", image: "/pictures/wood.jpeg", year: "2022" },
+  { id: 3, title: "The Atrium", category: "Cultural Space", image: "/pictures/iron.jpeg", year: "2024" },
+  { id: 4, title: "Ethereal Villa", category: "Private Estate", image: "/pictures/wall.jpeg", year: "2023" },
+  { id: 5, title: "Urban Flux", category: "Mixed Use", image: "/pictures/mud.jpg", year: "2024" },
 ];
 
 export const SERVICES: Service[] = [

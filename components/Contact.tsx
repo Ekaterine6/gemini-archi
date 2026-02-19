@@ -15,17 +15,17 @@ const Contact: React.FC = () => {
           <div className="space-y-12">
             <div>
               <p className="text-xs uppercase tracking-widest text-zinc-500 mb-2">Location</p>
-              <p className="text-xl font-light">Karakum St, Ashgabat<br />Turkmenistan</p>
+              <p className="text-xl font-light">Makhachkala<br />Dagestan, Russia.</p>
             </div>
             <div>
               <p className="text-xs uppercase tracking-widest text-zinc-500 mb-2">General Enquiries</p>
               <p className="text-xl font-light hover:text-zinc-400 transition-colors">
-                <a href="mailto:info@ibragimstroy.com">info@ibragimstroy.com</a>
+                <a href="mailto:info@ibragimstroy.com">malakhov.i.93@mail.ru</a>
               </p>
             </div>
             <div>
               <p className="text-xs uppercase tracking-widest text-zinc-500 mb-2">Call us</p>
-              <p className="text-xl font-light">+993 12 000000</p>
+              <p className="text-xl font-light">+7 960 407-42-02</p>
             </div>
           </div>
         </div>

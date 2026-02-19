@@ -1,24 +1,26 @@
-
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { TEAM } from '../constants';
 
-const Team: React.FC = () => {
+interface TeamProps {
+  language: "ru" | "en";
+}
+
+const Team: React.FC<TeamProps> = ({ language }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const portraitsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const membersRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(portraitsRef.current, {
+      gsap.from(membersRef.current, {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 70%",
+          start: "top 80%",
         },
-        y: 100,
+        y: 80,
         opacity: 0,
-        scale: 0.9,
         stagger: 0.2,
-        duration: 1.5,
+        duration: 1,
         ease: "power3.out"
       });
     }, sectionRef);
@@ -27,36 +29,47 @@ const Team: React.FC = () => {
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="py-32 px-6 md:px-12 bg-[#050505]">
+    <section id="about" ref={sectionRef} className="py-32 px-6 md:px-12 bg-black">
       <div className="max-w-screen-2xl mx-auto">
-        <div className="max-w-3xl mb-24">
-          <span className="text-xs uppercase tracking-[0.4em] text-zinc-500 mb-4 block">The minds behind</span>
+        <div className="max-w-xl mb-24">
+          <span className="text-xs uppercase tracking-[0.4em] text-zinc-500 mb-4 block">
+            {language === "ru" ? "Команда" : "Our Team"}
+          </span>
+
           <h2 className="text-4xl md:text-6xl font-serif leading-tight">
-            Our creative force is a blend of <span className="italic text-zinc-400">visionary architecture</span> and engineering prowess.
+            {language === "ru"
+              ? "Люди, стоящие за проектами"
+              : "The minds behind"}
           </h2>
+
+          <p className="text-zinc-500 mt-6 text-sm max-w-md">
+            {language === "ru"
+              ? "Наш творческий коллектив сочетает архитектурное видение и инженерное мастерство."
+              : "Our creative force is a blend of visionary architecture and engineering prowess."
+            }
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {TEAM.map((member, index) => (
-            <div 
-              key={member.id} 
-              // Fix: Ensure ref callback returns void instead of the element
-              ref={el => { portraitsRef.current[index] = el; }}
-              className="group cursor-none"
+            <div
+              key={member.id}
+              ref={el => { membersRef.current[index] = el; }}
+              className="group"
             >
-              <div className="relative aspect-[3/4] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 bg-zinc-900">
-                <img 
-                  src={member.image} 
+              <div className="overflow-hidden mb-6 bg-zinc-900">
+                <img
+                  src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
-                
-                <div className="absolute bottom-8 left-8 right-8">
-                  <h3 className="text-2xl font-serif mb-1">{member.name}</h3>
-                  <p className="text-xs uppercase tracking-widest text-zinc-400">{member.role}</p>
-                </div>
               </div>
+
+              <h3 className="text-xl font-serif">{member.name}</h3>
+
+              <p className="text-zinc-500 text-sm mt-1">
+                {member.role}
+              </p>
             </div>
           ))}
         </div>

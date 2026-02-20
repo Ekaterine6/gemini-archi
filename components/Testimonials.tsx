@@ -1,10 +1,13 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { REVIEWS } from '../constants';
 import { Quote } from 'lucide-react';
 
-const Testimonials: React.FC = () => {
+interface Props {
+  language: "ru" | "en";
+}
+
+const Testimonials: React.FC<Props> = ({ language }) => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -36,11 +39,15 @@ const Testimonials: React.FC = () => {
             className="space-y-8"
           >
             <p className="text-2xl md:text-4xl font-serif leading-relaxed italic text-zinc-200">
-              "{REVIEWS[index].content}"
+              "{REVIEWS[index].content[language]}"
             </p>
             <div>
-              <h4 className="text-lg font-bold tracking-widest uppercase mb-1">{REVIEWS[index].author}</h4>
-              <p className="text-zinc-500 text-xs uppercase tracking-[0.3em]">{REVIEWS[index].position}</p>
+              <h4 className="text-lg font-bold tracking-widest uppercase mb-1">
+                {REVIEWS[index].author}
+              </h4>
+              <p className="text-zinc-500 text-xs uppercase tracking-[0.3em]">
+                {REVIEWS[index].position[language]}
+              </p>
             </div>
           </motion.div>
         </AnimatePresence>

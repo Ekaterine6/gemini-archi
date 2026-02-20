@@ -68,7 +68,7 @@ const Team: React.FC<TeamProps> = ({ language }) => {
               <h3 className="text-xl font-serif">{member.name}</h3>
 
               <p className="text-zinc-500 text-sm mt-1">
-                {member.role}
+                {member.role[language]}
               </p>
             </div>
           ))}

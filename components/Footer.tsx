@@ -25,34 +25,19 @@ const Footer: React.FC<Props> = ({ language }) => {
             </p>
 
             <div className="flex space-x-6">
-              <a href="#" className="text-zinc-600 hover:text-white transition-colors"><Instagram size={20} /></a>
-              <a href="#" className="text-zinc-600 hover:text-white transition-colors"><Twitter size={20} /></a>
-              <a href="#" className="text-zinc-600 hover:text-white transition-colors"><Linkedin size={20} /></a>
-              <a href="#" className="text-zinc-600 hover:text-white transition-colors"><Facebook size={20} /></a>
+              <a href="https://www.instagram.com/ibragim_stroy/" className="text-zinc-600 hover:text-white transition-colors"><Instagram size={20} /></a>
             </div>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-12 lg:gap-24">
             <div>
               <h5 className="text-[10px] uppercase tracking-[0.4em] text-white mb-6">
-                {language === "ru" ? "Навигация" : "Explore"}
-              </h5>
-              <ul className="space-y-4 text-zinc-500 text-sm">
-                <li><a href="#" className="hover:text-white">Portfolio</a></li>
-                <li><a href="#" className="hover:text-white">Philosophy</a></li>
-                <li><a href="#" className="hover:text-white">News</a></li>
-                <li><a href="#" className="hover:text-white">Careers</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h5 className="text-[10px] uppercase tracking-[0.4em] text-white mb-6">
                 {language === "ru" ? "Услуги" : "Service"}
               </h5>
               <ul className="space-y-4 text-zinc-500 text-sm">
-                <li><a href="#" className="hover:text-white">Commercial</a></li>
+                <li><a href="#" className="hover:text-white">Architectural Design</a></li>
                 <li><a href="#" className="hover:text-white">Residential</a></li>
-                <li><a href="#" className="hover:text-white">Urban Design</a></li>
+                <li><a href="#" className="hover:text-white">Project Management</a></li>
                 <li><a href="#" className="hover:text-white">Interiors</a></li>
               </ul>
             </div>
@@ -62,9 +47,7 @@ const Footer: React.FC<Props> = ({ language }) => {
                 {language === "ru" ? "Офис" : "Office"}
               </h5>
               <address className="not-italic text-zinc-500 text-sm leading-relaxed">
-                Ashgabat, Turkmenistan<br />
-                Business Center "Gulzemin"<br />
-                Floor 12, Office 1205
+                Makhachkala, Dagestan<br />
               </address>
             </div>
           </div>

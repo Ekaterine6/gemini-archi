@@ -4,36 +4,36 @@ import { Project, TeamMember, Service, Review } from './types';
 export const PROJECTS: Project[] = [
   {
     id: 1,
-    title: { ru: "Резиденция Оникс", en: "Onyx Residence" },
+    title: { ru: "Резиденция Оникс", en: "Residence" },
     category: { ru: "Элитное жильё", en: "Luxury Residential" },
     image: "/pictures/ibish2.png",
     year: "2023",
   },
   {
     id: 2,
-    title: { ru: "Башни Монолит", en: "Monolith Towers" },
-    category: { ru: "Коммерческий центр", en: "Commercial Hub" },
+    title: { ru: "Башни", en: "Building" },
+    category: { ru: "Закладка фундамента", en: "Laying Foundation" },
     image: "/pictures/better.jpg",
     year: "2022",
   },
   {
     id: 3,
     title: { ru: "Атриум", en: "The Atrium" },
-    category: { ru: "Культурное пространство", en: "Cultural Space" },
+    category: { ru: "Укрепление", en: "Reinforcing" },
     image: "/pictures/iron.jpeg",
     year: "2024",
   },
   {
     id: 4,
-    title: { ru: "Эфирная Вилла", en: "Ethereal Villa" },
+    title: { ru: "Вилла", en: "Ethereal Villa" },
     category: { ru: "Частная усадьба", en: "Private Estate" },
     image: "/pictures/ibish1.jpeg",
     year: "2023",
   },
   {
     id: 5,
-    title: { ru: "Городской Поток", en: "Urban Flux" },
-    category: { ru: "Смешанное использование", en: "Mixed Use" },
+    title: { ru: "фундамента для пола", en: "Floor" },
+    category: { ru: "Закладка фундамента", en: "Laying Foundation" },
     image: "/pictures/mud.jpeg",
     year: "2024",
   },
@@ -81,7 +81,7 @@ export const SERVICES: Service[] = [
 export const TEAM: TeamMember[] = [
   {
     id: 1,
-    name: "Ibragim Aliev",
+    name: "Ibragim Malaxov",
     role: { ru: "Главный архитектор", en: "Principal Architect" },
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800"
   },

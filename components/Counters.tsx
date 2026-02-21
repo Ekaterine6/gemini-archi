@@ -58,8 +58,8 @@ const Counters = () => {
   return (
     <section className="flex flex-col md:flex-row justify-center items-center gap-12 py-20 bg-[#050505]">
       <CounterItem endValue={5} label="Experience (Years)" suffix="+" />
-      <CounterItem endValue={120} label="Projects Completed" suffix="+" />
-      <CounterItem endValue={95} label="User Satisfaction (%)" suffix="%" />
+      <CounterItem endValue={78} label="Projects Completed" suffix="+" />
+      <CounterItem endValue={100} label="User Satisfaction (%)" suffix="%" />
     </section>
   );
 };

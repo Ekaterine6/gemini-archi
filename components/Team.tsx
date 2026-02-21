@@ -31,31 +31,32 @@ const Team: React.FC<TeamProps> = ({ language }) => {
   return (
     <section id="about" ref={sectionRef} className="py-32 px-6 md:px-12 bg-black">
       <div className="max-w-screen-2xl mx-auto">
+        {/* Heading Section */}
         <div className="max-w-xl mb-24">
           <span className="text-xs uppercase tracking-[0.4em] text-zinc-500 mb-4 block">
-            {language === "ru" ? "Команда" : "Our Team"}
+            {language === "ru" ? "Основатель" : "Founder"}
           </span>
 
           <h2 className="text-4xl md:text-6xl font-serif leading-tight">
             {language === "ru"
-              ? "Люди, стоящие за проектами"
-              : "The minds behind"}
+              ? "Человек, стоящий за проектами"
+              : "The person behind the projects"}
           </h2>
 
           <p className="text-zinc-500 mt-6 text-sm max-w-md">
             {language === "ru"
-              ? "Наш творческий коллектив сочетает архитектурное видение и инженерное мастерство."
-              : "Our creative force is a blend of visionary architecture and engineering prowess."
-            }
+              ? "Ибрагим лично руководит каждым проектом, объединяя проверенную команду специалистов и обеспечивая качество на каждом этапе строительства."
+              : "Ibragim personally leads every project, bringing together a trusted construction team and ensuring quality at every stage."}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        {/* Founder Card */}
+        <div className="flex justify-center">
           {TEAM.map((member, index) => (
             <div
               key={member.id}
               ref={el => { membersRef.current[index] = el; }}
-              className="group"
+              className="group max-w-sm"
             >
               <div className="overflow-hidden mb-6 bg-zinc-900">
                 <img
@@ -69,6 +70,12 @@ const Team: React.FC<TeamProps> = ({ language }) => {
 
               <p className="text-zinc-500 text-sm mt-1">
                 {member.role[language]}
+              </p>
+
+              <p className="text-zinc-400 text-xs mt-3 italic">
+                {language === "ru"
+                  ? "«Строительство — это не просто работа, а ответственность перед людьми.»"
+                  : "“Construction is not just work — it’s responsibility to people.”"}
               </p>
             </div>
           ))}

@@ -82,21 +82,12 @@ export const TEAM: TeamMember[] = [
   {
     id: 1,
     name: "Ibragim Malaxov",
-    role: { ru: "Главный архитектор", en: "Principal Architect" },
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    id: 2,
-    name: "Elena Sokolova",
-    role: { ru: "Директор интерьеров", en: "Interior Director" },
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    id: 3,
-    name: "Mark Wilson",
-    role: { ru: "Инженер-конструктор", en: "Structural Lead" },
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=800"
-  },
+    role: { 
+      ru: "Основатель и руководитель строительства", 
+      en: "Founder & Head of Construction" 
+    },
+    image: "/pictures/ibragim.jpg"
+  }
 ];
 
 export const REVIEWS: Review[] = [

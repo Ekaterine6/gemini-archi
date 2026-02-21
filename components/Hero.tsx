@@ -41,7 +41,7 @@ const Hero: React.FC<Props> = ({ language }) => {
     <section ref={heroRef} className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       <div ref={bgRef} className="absolute inset-0 overflow-hidden">
         <video autoPlay muted loop playsInline preload="auto" className="absolute inset-0 w-full h-full object-cover">
-          <source src="/pictures/bg2.webm" type="video/webm" />
+          <source src="/pictures/bg1.webm" type="video/webm" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-transparent pointer-events-none"></div>
       </div>

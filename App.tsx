@@ -12,28 +12,28 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-// Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
 const App: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // ✅ LANGUAGE STATE (default Russian)
-  const [language, setLanguage] = useState<"ru" | "en">("ru");
+  // Language state (default Russian)
+  const [language, setLanguage] = useState<'ru' | 'en'>('ru');
 
-  // ✅ Load saved language from localStorage
+  // Load saved language from localStorage
   useEffect(() => {
-    const savedLang = localStorage.getItem("lang");
-    if (savedLang === "ru" || savedLang === "en") {
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang === 'ru' || savedLang === 'en') {
       setLanguage(savedLang);
     }
   }, []);
 
-  // ✅ Save language when changed
+  // Save language when changed
   useEffect(() => {
-    localStorage.setItem("lang", language);
+    localStorage.setItem('lang', language);
   }, [language]);
 
+  // Refresh GSAP scroll triggers on mount
   useEffect(() => {
     ScrollTrigger.refresh();
   }, []);

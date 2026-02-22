@@ -58,14 +58,6 @@ const Footer: React.FC<Props> = ({ language }) => {
             &copy; {currentYear} IBRAGIM STROY. {language === "ru" ? "ВСЕ ПРАВА ЗАЩИЩЕНЫ." : "ALL RIGHTS RESERVED."}
           </p>
 
-          <div className="flex space-x-8 text-[10px] uppercase tracking-widest text-zinc-700">
-            <a href="#" className="hover:text-white">
-              {language === "ru" ? "Политика конфиденциальности" : "Privacy Policy"}
-            </a>
-            <a href="#" className="hover:text-white">
-              {language === "ru" ? "Условия использования" : "Terms of Service"}
-            </a>
-          </div>
         </div>
 
       </div>

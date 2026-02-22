@@ -4,7 +4,7 @@ import { Project, TeamMember, Service, Review } from './types';
 export const PROJECTS: Project[] = [
   {
     id: 1,
-    title: { ru: "Резиденция Оникс", en: "Residence" },
+    title: { ru: "Резиденция", en: "Residence" },
     category: { ru: "Элитное жильё", en: "Luxury Residential" },
     image: "/pictures/ibish2.png",
     year: "2023",
@@ -18,7 +18,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 3,
-    title: { ru: "Атриум", en: "The Atrium" },
+    title: { ru: "Башни", en: "Building" },
     category: { ru: "Укрепление", en: "Reinforcing" },
     image: "/pictures/iron.jpeg",
     year: "2024",
@@ -93,21 +93,21 @@ export const TEAM: TeamMember[] = [
 export const REVIEWS: Review[] = [
   {
     id: 1,
-    author: "Jonathan Reed",
-    position: { ru: "CEO, Nexa Corp", en: "CEO, Nexa Corp" },
+    author: "Ibragim",
+    position: { ru: "CEO", en: "CEO" },
     content: {
-      ru: "Ibragim Stroy превратили наше видение в реальность, превзошедшую ожидания.",
-      en: "Ibragim Stroy transformed our vision into a physical reality that exceeded expectations."
+      ru: "Как генеральный директор, я гарантирую, что каждый проект Ibragim Stroy строится с точностью, честностью и вниманием к деталям. Наша цель, превратить ваше видение в прочную и надёжную реальность.",
+      en: "As CEO, I personally guarantee that every Ibragim Stroy project is built with precision, integrity, and attention to detail. Our mission is to turn your vision into a durable and reliable reality."
     },
     rating: 5
   },
   {
     id: 2,
-    author: "Sarah Jenkins",
-    position: { ru: "Частный коллекционер", en: "Private Collector" },
+    author: "Ibragim",
+    position: { ru: "CEO", en: "CEO" },
     content: {
-      ru: "Уровень профессионализма был мирового класса. Настоящие партнёры в дизайне.",
-      en: "The level of sophistication and professional handling was world-class."
+      ru: "Мы берём на себя полную ответственность за качество нашей работы. Я обещаю клиентам прозрачный процесс, надёжные сроки и строительство, которое прослужит долгие годы.",
+      en: "We take full responsibility for the quality of our work. I promise our clients a transparent process, dependable timelines, and construction that stands strong for years to come."
     },
     rating: 5
   },

@@ -20,8 +20,8 @@ const Footer: React.FC<Props> = ({ language }) => {
 
             <p className="text-zinc-500 text-sm leading-relaxed mb-8">
               {language === "ru"
-                ? "Архитектурное совершенство в Туркменистане и за его пределами. Мы создаём пространства, определяющие современную роскошь."
-                : "Pioneering architectural excellence in Turkmenistan and beyond. Dedicated to creating timeless spaces that redefine modern luxury."}
+                ? "Архитектурное совершенство в Dagestan и за его пределами. Мы создаём пространства, определяющие современную роскошь."
+                : "Pioneering architectural excellence in Dagestan and beyond. Dedicated to creating timeless spaces that redefine modern luxury."}
             </p>
 
             <div className="flex space-x-6">

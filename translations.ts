@@ -3,7 +3,7 @@ export const translations = {
     nav: {
       projects: "Проекты",
       services: "Услуги",
-      team: "Команда",
+      team: "CEO",
       contact: "Контакты",
     },
     portfolio: "Портфолио",
@@ -12,7 +12,7 @@ export const translations = {
     nav: {
       projects: "Projects",
       services: "Services",
-      team: "Team",
+      team: "CEO",
       contact: "Contact",
     },
     portfolio: "Portfolio",

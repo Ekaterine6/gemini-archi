@@ -32,7 +32,6 @@ const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
 
   return (
     <nav
-      // much higher z so it sits above overlays/hero video
       className={`fixed top-0 left-0 w-full z-[999] transition-all duration-500 px-6 md:px-12 py-6 ${
         scrolled ? 'bg-black/80 backdrop-blur-md py-4' : 'bg-transparent'
       }`}
@@ -81,7 +80,7 @@ const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
 
         {/* Mobile Toggle */}
         <div className="flex items-center gap-3">
-          {/* Mobile floating language button (always visible on small screens) */}
+          {/* Mobile floating language button */}
           <button
             onClick={toggleLang}
             aria-label="Switch language"
@@ -105,40 +104,48 @@ const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 bg-black z-40 flex flex-col items-center justify-center space-y-8 md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/95 z-40 flex flex-col items-center justify-center space-y-6 md:hidden px-4"
           >
-            {navLinks.map((link) => (
-              <a
+            {navLinks.map((link, i) => (
+              <motion.a
                 key={link.name}
                 href={link.href}
-                className="text-3xl font-serif hover:text-zinc-400 transition-colors"
+                className="text-2xl sm:text-3xl font-serif hover:text-zinc-400 transition-colors"
                 onClick={() => setIsOpen(false)}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
               >
                 {link.name}
-              </a>
+              </motion.a>
             ))}
 
-            {/* Mobile Language Switch (inside menu for convenience) */}
-            <button
+            <motion.button
               onClick={() => {
                 toggleLang();
                 setIsOpen(false);
               }}
-              className="text-lg border px-6 py-2 uppercase"
+              className="text-lg border px-4 py-2 uppercase mt-2"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: navLinks.length * 0.1 }}
             >
               {language === 'ru' ? 'Switch to English' : 'Переключить на русский'}
-            </button>
+            </motion.button>
 
-            <a
+            <motion.a
               href="#contact"
               onClick={() => setIsOpen(false)}
-              className="mt-4 px-10 py-4 bg-white text-black font-bold uppercase tracking-widest"
+              className="mt-4 px-6 py-3 bg-white text-black font-bold uppercase tracking-widest"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: (navLinks.length + 1) * 0.1 }}
             >
               {language === 'ru' ? 'Связаться' : 'Get in Touch'}
-            </a>
+            </motion.a>
           </motion.div>
         )}
       </AnimatePresence>

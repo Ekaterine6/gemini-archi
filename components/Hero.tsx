@@ -16,6 +16,8 @@ const Hero: React.FC<Props> = ({ language }) => {
   const bgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+
     const ctx = gsap.context(() => {
       gsap.fromTo(titleRef.current,{ y: 100, opacity: 0 },
         { y: 0, opacity: 1, duration: 1.5, ease: "power4.out", delay: 0.5 });
@@ -23,24 +25,36 @@ const Hero: React.FC<Props> = ({ language }) => {
       gsap.fromTo(subtitleRef.current,{ y: 40, opacity: 0 },
         { y: 0, opacity: 1, duration: 1.2, ease: "power3.out", delay: 1 });
 
-      gsap.to(bgRef.current,{
-        scrollTrigger:{ trigger: heroRef.current, start:"top top", end:"bottom top", scrub:true },
-        y:200, scale:1.1, ease:"none"
-      });
+      if (!isMobile) {
+        gsap.to(bgRef.current,{
+          scrollTrigger:{ trigger: heroRef.current, start:"top top", end:"bottom top", scrub:true },
+          y:200, scale:1.1, ease:"none"
+        });
 
-      gsap.to(titleRef.current,{
-        scrollTrigger:{ trigger: heroRef.current, start:"top top", end:"bottom top", scrub:true },
-        y:-100, opacity:0, ease:"none"
-      });
+        gsap.to(titleRef.current,{
+          scrollTrigger:{ trigger: heroRef.current, start:"top top", end:"bottom top", scrub:true },
+          y:-100, opacity:0, ease:"none"
+        });
+      }
     }, heroRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={heroRef} className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+    <section
+      ref={heroRef}
+      className="relative min-h-[100svh] md:h-screen w-full flex items-center justify-center overflow-hidden"
+    >
       <div ref={bgRef} className="absolute inset-0 overflow-hidden">
-        <video autoPlay muted loop playsInline preload="auto" className="absolute inset-0 w-full h-full object-cover">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 w-full h-full object-cover md:object-center object-[center_30%]"
+        >
           <source src="/pictures/bg1.webm" type="video/webm" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-transparent pointer-events-none"></div>

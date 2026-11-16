@@ -1,20 +1,31 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Ibragim Stroy
 
-# Run and deploy your AI Studio app
+Official website of Ibragim Stroy, showcasing the company's construction, architecture, and development services.
 
-This contains everything you need to run your app locally.
+## Getting Started
 
-View your app in AI Studio: https://ai.studio/apps/drive/10KV-bcE8kw00LknSCGgj9g8Pb6CKcRIL
+### Prerequisites
+- Node.js
+- npm
 
-## Run Locally
+### Installation
 
-**Prerequisites:**  Node.js
+1. Clone the repository:
 
+   `git clone https://github.com/Ekaterine6/gemini-archi.git`
 
-1. Install dependencies:
+2. Navigate to the project directory:
+
+   `cd gemini-archi`
+
+3. Install dependencies:
+
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
+
+4. Start the development server:
+
    `npm run dev`
+
+## Live Website
+
+https://ibragimstroy.it.com/

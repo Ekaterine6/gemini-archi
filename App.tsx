@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import Navbar from './components/Navbar';
+import Portfolio from './components/Portfolio';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import HorizontalGallery from './components/HorizontalGallery';
@@ -48,8 +49,9 @@ const App: React.FC = () => {
       <main>
         <Hero language={language} />
         <Services language={language} />
+        <Portfolio language={language} />
         <HorizontalGallery language={language} />
-        <Counters />
+        <Counters language={language} />
         <Team language={language} />
         <Testimonials language={language} />
         <Contact language={language} />

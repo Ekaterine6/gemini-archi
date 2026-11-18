@@ -56,17 +56,13 @@ const Team: React.FC<TeamProps> = ({ language }) => {
             <div
               key={member.id}
               ref={el => { membersRef.current[index] = el; }}
-              className="group max-w-sm"
+              className="group max-w-2xl text-center"
             >
-              <div className="overflow-hidden mb-6 bg-zinc-900">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-              </div>
+            
 
-              <h3 className="text-xl font-serif">{member.name}</h3>
+              <h3 className="text-3xl md:text-4xl font-serif tracking-wide">
+                {member.name}
+              </h3>
 
               <p className="text-zinc-500 text-sm mt-1">
                 {member.role[language]}

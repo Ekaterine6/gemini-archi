@@ -63,7 +63,8 @@ const Services: React.FC<ServicesProps> = ({ language }) => {
               <div
                 key={service.id}
                 ref={el => { cardsRef.current[index] = el; }}
-                className="group p-8 border border-zinc-800 hover:border-white transition-colors duration-500 flex flex-col h-full"
+                id={`service-${service.id}`}
+                className="group scroll-mt-24 p-8 border border-zinc-800 hover:border-white transition-colors duration-500 flex flex-col h-full"
               >
                 <div className="mb-12 text-zinc-500 group-hover:text-white transition-colors">
                   <IconComponent size={40} strokeWidth={1} />

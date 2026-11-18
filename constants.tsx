@@ -5,35 +5,35 @@ export const PROJECTS: Project[] = [
   {
     id: 1,
     title: { ru: "Резиденция", en: "Residence" },
-    category: { ru: "Элитное жильё", en: "Luxury Residential" },
+    category: { ru: "Премиальная жилая архитектура", en: "Luxury Residential" },
     image: "/pictures/ibish2.png",
     year: "2023",
   },
   {
     id: 2,
-    title: { ru: "Башни", en: "Building" },
-    category: { ru: "Закладка фундамента", en: "Laying Foundation" },
+    title: { ru: "Здание", en: "Building" },
+    category: { ru: "Устройство фундамента", en: "Laying Foundation" },
     image: "/pictures/better.jpg",
     year: "2022",
   },
   {
     id: 3,
-    title: { ru: "Башни", en: "Building" },
-    category: { ru: "Укрепление", en: "Reinforcing" },
+    title: { ru: "Здание", en: "Building" },
+    category: { ru: "Армирование конструкций", en: "Reinforcing" },
     image: "/pictures/iron.jpeg",
     year: "2024",
   },
   {
     id: 4,
     title: { ru: "Вилла", en: "Ethereal Villa" },
-    category: { ru: "Частная усадьба", en: "Private Estate" },
+    category: { ru: "Частная резиденция", en: "Private Estate" },
     image: "/pictures/ibish1.jpeg",
     year: "2023",
   },
   {
     id: 5,
-    title: { ru: "фундамента для пола", en: "Floor" },
-    category: { ru: "Закладка фундамента", en: "Laying Foundation" },
+    title: { ru: "Фундамент", en: "Floor" },
+    category: { ru: "Подготовка основания", en: "Laying Foundation" },
     image: "/pictures/mud.jpeg",
     year: "2024",
   },
@@ -42,36 +42,48 @@ export const PROJECTS: Project[] = [
 export const SERVICES: Service[] = [
   {
     id: 1,
-    title: { ru: "Архитектурное проектирование", en: "Architectural Design" },
+    title: {
+      ru: "Архитектурное проектирование",
+      en: "Architectural Design"
+    },
     description: {
-      ru: "Визионерские концепции, превращённые в структурно надёжные шедевры.",
+      ru: "Разрабатываем выразительные архитектурные концепции и воплощаем их в надёжных, функциональных сооружениях.",
       en: "Visionary concepts translated into structurally sound masterpieces."
     },
     icon: "Building2"
   },
   {
     id: 2,
-    title: { ru: "Интерьерное планирование", en: "Interior Planning" },
+    title: {
+      ru: "Дизайн и планирование интерьеров",
+      en: "Interior Planning"
+    },
     description: {
-      ru: "Уникальные пространства, ориентированные на комфорт и эстетику.",
+      ru: "Создаём продуманные интерьерные решения, в которых функциональность, комфорт и эстетика образуют единое целое.",
       en: "Bespoke environments tailored to human experience and aesthetic flow."
     },
     icon: "Layout"
   },
   {
     id: 3,
-    title: { ru: "Управление проектом", en: "Project Management" },
+    title: {
+      ru: "Управление строительными проектами",
+      en: "Project Management"
+    },
     description: {
-      ru: "Точное исполнение от начала строительства до финальной сдачи.",
+      ru: "Координируем все этапы строительства, от подготовки и организации работ до контроля качества и сдачи объекта.",
       en: "Precision execution from ground-breaking to final handover."
     },
     icon: "Ruler"
   },
   {
     id: 4,
-    title: { ru: "Консалтинг устойчивости", en: "Sustainability Consulting" },
+    title: {
+      ru: "Консультирование по устойчивому строительству",
+      en: "Sustainability Consulting"
+    },
     description: {
-      ru: "Интеграция экологичных технологий для долговечного наследия.",
+      ru: "Помогаем внедрять экологичные и энергоэффективные решения, рассчитанные на долговечность и ответственное использование ресурсов.",
       en: "Integrating eco-conscious technologies for a lasting legacy."
     },
     icon: "PenTool"
@@ -82,9 +94,9 @@ export const TEAM: TeamMember[] = [
   {
     id: 1,
     name: "Ibragim Malaxov",
-    role: { 
-      ru: "Основатель и руководитель строительства", 
-      en: "Founder & Head of Construction" 
+    role: {
+      ru: "Основатель и руководитель строительных проектов",
+      en: "Founder & Head of Construction"
     },
     image: "/pictures/ibragim.jpg"
   }
@@ -94,9 +106,9 @@ export const REVIEWS: Review[] = [
   {
     id: 1,
     author: "Ibragim",
-    position: { ru: "CEO", en: "CEO" },
+    position: { ru: "Генеральный директор", en: "CEO" },
     content: {
-      ru: "Как генеральный директор, я гарантирую, что каждый проект Ibragim Stroy строится с точностью, честностью и вниманием к деталям. Наша цель, превратить ваше видение в прочную и надёжную реальность.",
+      ru: "Как генеральный директор, я лично отвечаю за то, чтобы каждый проект Ibragim Stroy реализовывался с точностью, добросовестностью и вниманием к деталям. Наша задача заключается в том, чтобы воплощать ваши идеи в надёжные и долговечные решения.",
       en: "As CEO, I personally guarantee that every Ibragim Stroy project is built with precision, integrity, and attention to detail. Our mission is to turn your vision into a durable and reliable reality."
     },
     rating: 5
@@ -104,9 +116,9 @@ export const REVIEWS: Review[] = [
   {
     id: 2,
     author: "Ibragim",
-    position: { ru: "CEO", en: "CEO" },
+    position: { ru: "Генеральный директор", en: "CEO" },
     content: {
-      ru: "Мы берём на себя полную ответственность за качество нашей работы. Я обещаю клиентам прозрачный процесс, надёжные сроки и строительство, которое прослужит долгие годы.",
+      ru: "Мы несём полную ответственность за качество своей работы. Для наших клиентов важны прозрачность процессов, соблюдение согласованных сроков и строительство, рассчитанное на долгие годы.",
       en: "We take full responsibility for the quality of our work. I promise our clients a transparent process, dependable timelines, and construction that stands strong for years to come."
     },
     rating: 5

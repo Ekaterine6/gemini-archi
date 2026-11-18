@@ -4,15 +4,16 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Single counter item component
-const CounterItem = ({
-  endValue,
-  label,
-  suffix = "",
-}: {
+interface CounterItemProps {
   endValue: number;
   label: string;
   suffix?: string;
+}
+
+const CounterItem: React.FC<CounterItemProps> = ({
+  endValue,
+  label,
+  suffix = '',
 }) => {
   const [count, setCount] = useState(0);
   const elementRef = useRef<HTMLDivElement>(null);
@@ -25,6 +26,7 @@ const CounterItem = ({
         once: true,
         onEnter: () => {
           const obj = { val: 0 };
+
           gsap.to(obj, {
             val: endValue,
             duration: 2.5,
@@ -46,6 +48,7 @@ const CounterItem = ({
       <div className="text-6xl md:text-8xl font-serif font-black mb-4">
         {count}{suffix}
       </div>
+
       <div className="text-xs uppercase tracking-[0.4em] text-zinc-500">
         {label}
       </div>
@@ -53,13 +56,30 @@ const CounterItem = ({
   );
 };
 
-// Main Counters wrapper
-const Counters = () => {
+interface CountersProps {
+  language: 'ru' | 'en';
+}
+
+const Counters: React.FC<CountersProps> = ({ language }) => {
   return (
     <section className="flex flex-col md:flex-row justify-center items-center gap-12 py-20 bg-[#050505]">
-      <CounterItem endValue={5} label="Experience (Years)" suffix="+" />
-      <CounterItem endValue={78} label="Projects Completed" suffix="+" />
-      <CounterItem endValue={100} label="User Satisfaction (%)" suffix="%" />
+      <CounterItem
+        endValue={5}
+        label={language === 'ru' ? 'Лет опыта' : 'Experience (Years)'}
+        suffix="+"
+      />
+
+      <CounterItem
+        endValue={78}
+        label={language === 'ru' ? 'Завершённых проектов' : 'Projects Completed'}
+        suffix="+"
+      />
+
+      <CounterItem
+        endValue={100}
+        label={language === 'ru' ? 'Удовлетворённость клиентов' : 'User Satisfaction'}
+        suffix="%"
+      />
     </section>
   );
 };

@@ -1,29 +1,65 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as pdfjsLib from 'pdfjs-dist';
 import workerSrc from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
-
 import type { PDFDocumentProxy } from 'pdfjs-dist';
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = workerSrc;
 
 interface PortfolioDocument {
-  title: string;
-  description: string;
+  title: {
+    ru: string;
+    en: string;
+  };
+  description: {
+    ru: string;
+    en: string;
+  };
   file: string;
 }
 
 const documents: PortfolioDocument[] = [
   {
-    title: 'Presentation 01',
-    description: 'Architectural portfolio',
+    title: {
+      ru: 'Презентация 01',
+      en: 'Presentation 01',
+    },
+    description: {
+      ru: 'Архитектурное портфолио',
+      en: 'Architectural portfolio',
+    },
     file: '/portfolio/presentation-01.pdf',
   },
   {
-    title: 'Presentation 02',
-    description: 'Projects and developments',
+    title: {
+      ru: 'Презентация 02',
+      en: 'Presentation 02',
+    },
+    description: {
+      ru: 'Проекты и реализованные объекты',
+      en: 'Projects and developments',
+    },
     file: '/portfolio/presentation-02.pdf',
   },
 ];
+
+const formatRussianPages = (count: number) => {
+  const lastTwo = count % 100;
+  const lastOne = count % 10;
+
+  if (lastTwo >= 11 && lastTwo <= 14) {
+    return `${count} СТРАНИЦ`;
+  }
+
+  if (lastOne === 1) {
+    return `${count} СТРАНИЦА`;
+  }
+
+  if (lastOne >= 2 && lastOne <= 4) {
+    return `${count} СТРАНИЦЫ`;
+  }
+
+  return `${count} СТРАНИЦ`;
+};
 
 interface PDFPageProps {
   pdf: PDFDocumentProxy;
@@ -40,7 +76,6 @@ const PDFPage: React.FC<PDFPageProps> = ({
 }) => {
   const pageRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-
   const [visible, setVisible] = useState(false);
   const [width, setWidth] = useState(0);
   const [rendered, setRendered] = useState(false);
@@ -71,6 +106,7 @@ const PDFPage: React.FC<PDFPageProps> = ({
 
   useEffect(() => {
     const element = pageRef.current;
+
     if (!element) return;
 
     const observer = new ResizeObserver(([entry]) => {
@@ -86,6 +122,7 @@ const PDFPage: React.FC<PDFPageProps> = ({
     if (!visible || !width || !canvasRef.current) return;
 
     let cancelled = false;
+
     let renderTask: ReturnType<
       Awaited<ReturnType<PDFDocumentProxy['getPage']>>['render']
     > | null = null;
@@ -178,7 +215,6 @@ const PDFViewer: React.FC<PDFViewerProps> = ({
   language,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-
   const [pdf, setPdf] = useState<PDFDocumentProxy | null>(null);
   const [pageCount, setPageCount] = useState(0);
   const [aspectRatio, setAspectRatio] = useState(0.707);
@@ -193,9 +229,7 @@ const PDFViewer: React.FC<PDFViewerProps> = ({
 
     loadingTask.promise
       .then(async (loadedPdf) => {
-        if (!active) {
-          return;
-        }
+        if (!active) return;
 
         const firstPage = await loadedPdf.getPage(1);
         const viewport = firstPage.getViewport({ scale: 1 });
@@ -222,11 +256,11 @@ const PDFViewer: React.FC<PDFViewerProps> = ({
       <div className="mb-5 flex items-end justify-between gap-3">
         <div>
           <h3 className="text-lg font-medium tracking-wide text-white">
-            {document.title}
+            {document.title[language]}
           </h3>
 
           <p className="mt-1 text-xs tracking-wider text-white/40">
-            {document.description}
+            {document.description[language]}
           </p>
         </div>
 
@@ -270,7 +304,9 @@ const PDFViewer: React.FC<PDFViewerProps> = ({
 
       {pdf && (
         <p className="mt-3 text-right text-[10px] tracking-widest text-white/30">
-          {pageCount} {language === 'ru' ? 'СТРАНИЦ' : 'PAGES'}
+          {language === 'ru'
+            ? formatRussianPages(pageCount)
+            : `${pageCount} PAGES`}
         </p>
       )}
     </div>

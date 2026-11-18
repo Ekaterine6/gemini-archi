@@ -1,11 +1,18 @@
+
 import React from 'react';
 import { Project, TeamMember, Service, Review } from './types';
 
 export const PROJECTS: Project[] = [
   {
     id: 1,
-    title: { ru: "Резиденция", en: "Residence" },
-    category: { ru: "Премиальная жилая архитектура", en: "Luxury Residential" },
+    title: {
+      ru: "Двухэтажный дом в чеченском стиле",
+      en: "Two-Story Chechen-Style House"
+    },
+    category: {
+      ru: "Премиальная жилая архитектура",
+      en: "Luxury Residential"
+    },
     image: "/pictures/ibish2.png",
     year: "2023",
   },
@@ -25,8 +32,14 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 4,
-    title: { ru: "Вилла", en: "Ethereal Villa" },
-    category: { ru: "Частная резиденция", en: "Private Estate" },
+    title: {
+      ru: "Двухэтажный дом с гостевым блоком",
+      en: "Two-Story House with Guest Block"
+    },
+    category: {
+      ru: "Частная резиденция",
+      en: "Private Estate"
+    },
     image: "/pictures/ibish1.jpeg",
     year: "2023",
   },

@@ -48,7 +48,12 @@ const HorizontalGallery: React.FC<Props> = ({ language }) => {
       {/* Scroll Counter */}
       <div className="absolute top-12 left-6 md:left-12 z-30 flex items-center space-x-6">
         <div className="text-zinc-500 font-mono text-xs">
-          {String(Math.min(Math.round(progress * PROJECTS.length) + 1, PROJECTS.length)).padStart(2, '0')}
+          {String(
+            Math.min(
+              Math.round(progress * PROJECTS.length) + 1,
+              PROJECTS.length
+            )
+          ).padStart(2, '0')}
           <span className="mx-2">/</span>
           {String(PROJECTS.length).padStart(2, '0')}
         </div>
@@ -96,15 +101,9 @@ const HorizontalGallery: React.FC<Props> = ({ language }) => {
 
               {/* Text Section */}
               <div className="mt-8 flex justify-between items-start">
-                <div>
-                  <span className="text-[10px] uppercase tracking-[0.3em] text-zinc-500 mb-2 block">
-                    {project.category[language]}
-                  </span>
-
-                  <h3 className="text-2xl md:text-3xl font-serif">
-                    {project.title[language]}
-                  </h3>
-                </div>
+                <h3 className="text-2xl md:text-3xl font-serif">
+                  {project.title[language]}
+                </h3>
 
                 <button className="p-3 border border-zinc-800 hover:bg-white hover:text-black transition-all">
                   <svg
